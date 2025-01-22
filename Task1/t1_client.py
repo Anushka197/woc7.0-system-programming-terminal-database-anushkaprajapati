@@ -1,13 +1,11 @@
 import socket
-
-# client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+import json
 
 host = '127.0.0.1'
 port = 1234
 
-# client_socket.connect((host, port))
-
-message = [1, 2, 3]
+with open("dictionary.json", "r") as file:
+    message = json.load(file)
 
 for i in message:
     client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
